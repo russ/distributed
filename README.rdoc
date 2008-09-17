@@ -1,8 +1,0 @@
-More helpful docs coming soon.
-
-	class User < ActiveRecord::Base
-		include Distributed::Distributable
-	end
-
-	user = Distributed::User.new( :name => 'Shake' )
-	user.save!
