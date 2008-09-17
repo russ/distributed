@@ -24,7 +24,7 @@ module Distributed
 				end
 			}
 
-			Distributed::Utils::Rinda.register_or_renew(:space => :myaapp, :klass_def => "#{base}".to_sym, :object => "Distributed::#{base}Proxy".constantize.instance)
+			Distributed::Utils::Rinda.register_or_renew(:space => Distributed::Config.app_name.to_sym, :klass_def => "#{base}".to_sym, :object => "Distributed::#{base}Proxy".constantize.instance)
 		end
 	end
 end

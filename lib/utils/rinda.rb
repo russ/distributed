@@ -31,7 +31,7 @@ module Distributed
 		private
 
 			def self.handle_options(options = {})
-				{ :space => nil, :klass_def => nil, :object => nil, :description => nil, :timeout => 0 }.merge(options)
+				{ :space => nil, :klass_def => nil, :object => nil, :description => nil, :timeout => Distributed::Config.timeout }.merge(options)
 			end
 		end
 	end

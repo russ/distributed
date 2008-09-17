@@ -5,6 +5,10 @@ require 'activerecord'
 require 'sqlite3'
 
 require File.join(File.dirname(__FILE__), '..', 'init')
+
+Distributed::Config.app_name = 'myapp'
+Distributed::Config.timeout = 0
+
 require File.join(File.dirname(__FILE__), 'user')
 
 ActiveRecord::Base.observers = :user_observer
