@@ -1,3 +1,3 @@
 sqlite:
-  :adapter: spec/sqlite3
-  :dbfile: distributed.sqlite3
+  :adapter: sqlite3
+  :dbfile: spec/distributed.sqlite3
