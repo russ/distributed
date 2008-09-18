@@ -5,9 +5,16 @@ module Distributed
 
 		cattr_accessor :timeout, :instance_writer => false
 		@@timeout = 0
+
+		cattr_accessor :development, :instance_writer => false
+		@@development = false
 	end
 
 	def self.const_missing(const)
-		Distributed::Utils::Rinda.read(:klass_def => "#{const}".to_sym)
+		if Distributed::Config.development
+			const.to_s.constantize
+		else
+			Distributed::Utils::Rinda.read(:klass_def => "#{const}".to_sym)
+		end
 	end
 end
